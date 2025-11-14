@@ -1,49 +1,9 @@
-const fonts = {
-  amatic: "'Amatic SC', sans-serif",
-  amaticBold: "'Amatic SC', sans-serif",
-  dreamPlanner: "'DREAM PLANNER', Impact, 'Arial Black', sans-serif"
-};
-
-function FaqButton({ className = "", content = "Check out the parent guide" }: {
-  className?: string
-  content?: string
-}) {
-  return (
-    <div className={className}>
-      <div className="flex gap-1 items-center">
-        <div className="relative w-12 h-12 overflow-hidden">
-          <img 
-            alt="" 
-            className="absolute -inset-1 w-full h-full object-cover" 
-            src="/icons/plus.svg" 
-          />
-        </div>
-        <p 
-          className="text-white text-5xl font-bold leading-none whitespace-nowrap"
-          style={{ fontFamily: fonts.amaticBold, fontWeight: 'bold' }}
-        >
-          {content}
-        </p>
-      </div>
-    </div>
-  )
-}
-
-function FaqQuestion({ className = "", question = "What is a game jam?" }: {
-  className?: string
-  question?: string
-}) {
-  return (
-    <div className={className}>
-      <p 
-        className="text-white text-5xl text-center font-bold leading-none w-full"
-        style={{ fontFamily: fonts.amaticBold, fontWeight: 'bold' }}
-      >
-        {question}
-      </p>
-    </div>
-  )
-}
+import { fonts } from './components/fonts.js';
+import FaqQuestion from './components/FaqQuestion.js';
+import FaqButton from './components/FaqButton.js';
+import Step from './components/Step.js';
+import StoryCard from './components/StoryCard.js';
+import GameCard from './components/GameCard.js';
 
 function App() {
   return (
@@ -66,22 +26,18 @@ function App() {
           </nav>
         </header>
 
-        <section className="relative h-full flex items-end pb-32 2xl:pb-48 px-6 md:px-16 lg:px-24 2xl:px-32" style={{
-          background: `url(/backgrounds/blue-sky.png)`,
-          backgroundPosition: 'center top',
-          backgroundSize: 'cover'
-        }}>
+        <section className="relative h-full flex items-end pb-32 2xl:pb-48 px-6 md:px-16 lg:px-24 2xl:px-32 bg-[url(/backgrounds/blue-sky.png)] bg-center bg-cover">
           <div className="absolute top-0 left-0 w-full h-full">
             <img src="/backgrounds/sky-shine.png" alt="" className="w-full h-full object-cover" />
           </div>
 
           <div className="absolute bottom-[32px] right-[140px] w-full h-full">
-            {/* fishy on the right. His name is frederick. */ }
+            {/* fishy on the right. His name is frederick. */}
             <div className="absolute top-[64px] right-[140px] w-1/6 animate-fish-swim-2">
               <img src="/characters/fish-2.png" alt="Fish named Frederick" className="w-full h-full object-cover" />
             </div>
 
-            {/* fishy on the left. His name is gubson */ }
+            {/* fishy on the left. His name is gubson */}
             <div className="absolute top-[32px] right-[300px] w-1/6 animate-fish-swim-1">
               <img src="/characters/fish-1.png" alt="Fish named Gubson" className="w-full h-full object-cover" />
             </div>
@@ -91,16 +47,12 @@ function App() {
             <img src="/backgrounds/bottom-cloud.png" alt="" />
           </div>
  
-          {/* Vines overlay below grass */}
           <div className="absolute -bottom-[50px] left-0 w-full h-[120px]">
             <img src="/decorative/vines.png" alt="" className="w-full h-full object-cover object-top" />
           </div>
 
-          {/* Main content */}
           <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-8 pb-24 z-10">
-            {/* Left side - CTA */}
             <div className="flex flex-col gap-4 w-full lg:w-[648px]">
-              {/* Logo section */}
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-4">
                   <img 
@@ -146,7 +98,6 @@ function App() {
                 </div>
               </div>
 
-              {/* RSVP section */}
               <div className="flex flex-col md:flex-row items-center gap-2">
                 <div 
                   className="bg-[#f9e2ca] border-4 border-[#d5a16c] rounded-[20px] px-4 md:px-8 py-4 flex items-center gap-3 md:gap-6 w-full transform rotate-[-1.2deg] shadow-[0_8px_20px_rgba(0,0,0,0.25)]"
@@ -177,9 +128,7 @@ function App() {
               </div>
             </div>
 
-            {/* Right side - Video section */}
             <div className="relative w-full lg:w-auto">
-              {/* Text and arrow above video */}
               <div className="flex items-center justify-center gap-3 mb-4 2xl:mb-8">
                 <p 
                   className="text-white text-2xl 2xl:text-6xl md:text-4xl font-bold"
@@ -215,27 +164,20 @@ function App() {
         </div>
       </div>
 
-      {/* Steps */}
-      <section className="relative pt-[13vw] pb-96" style={{
-        background: `url(/backgrounds/underwater-gradient.png)`,
-        backgroundSize: 'cover'
-      }}>
+      <section className="relative pt-[13vw] pb-96 bg-[url(/backgrounds/underwater-gradient.png)] bg-cover">
         <div className="absolute top-0 left-0 w-screen h-[200px] bg-gradient-to-b from-[#004b2a] to-transparent"></div>
         <div className="absolute top-[30px] left-0 w-full scale-125">
           <img src="/decorative/vines.png" alt="" className="w-full h-full object-cover" />
         </div>
 
-        {/* Clouds behind astronaut overlay */}
         <div className="absolute bottom-[500px] left-0 w-full h-[800px] -z-10">
           <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover" />
         </div>
         
-        {/* Seafloor overlay */}
         <div className="absolute bottom-0 left-0 w-full h-[613px] -z-10">
           <img src="/backgrounds/seafloor.png" alt="" className="w-full h-full object-cover" />
         </div>
         
-        {/* Astronaut overlay */}
         <div className="absolute bottom-[400px] left-32 w-[569px] h-[676px]">
           <img 
             src="/characters/astronaut.png" 
@@ -244,160 +186,54 @@ function App() {
           />
         </div>
         
-        {/* Cog overlay */}
         <div className="absolute top-[500px] right-32 w-[352px] h-[354px]">
           <img src="/decorative/cog.png" alt="" className="w-full h-full object-cover rounded-full" />
         </div>
 
-        {/* Steps content */}
         <div className="relative z-10 flex flex-col gap-24 items-center px-12 max-w-7xl mx-auto">
-          
-          {/* Step 1 */}
-          <div className="flex gap-16 items-center w-full">
-            <div className="flex flex-col items-end text-right text-white flex-1">
-              <p 
-                className="text-4xl font-bold mb-2"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                step 1
-              </p>
-              <p 
-                className="text-6xl font-bold leading-tight max-w-md"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                Sign up for a Campfire near you
-              </p>
-            </div>
-            <img 
-              src="/ui/step-signup.png" 
-              alt="Step 1" 
-              className="w-[539px] h-[299px] rounded-lg shadow-[15px_15px_0px_0px_rgba(0,0,0,0.25)] object-cover"
-            />
-          </div>
+          <Step 
+            stepNumber={1}
+            title="Sign up for a Campfire near you"
+            imageSrc="/ui/step-signup.png"
+            imageAlt="Step 1"
+          />
 
-          {/* Step 2 */}
-          <div className="flex gap-16 items-center w-full">
-            <img 
-              src="/ui/step-team.png" 
-              alt="Step 2" 
-              className="w-[509px] h-[307px] rounded-lg shadow-[-8px_16px_0px_0px_rgba(0,0,0,0.25)] object-cover"
-            />
-            <div className="flex flex-col items-start text-white flex-1">
-              <p 
-                className="text-4xl font-bold mb-2"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                step 2
-              </p>
-              <p 
-                className="text-6xl font-bold leading-tight"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                Grab friends (or make new friends!) and form a team of 2-3
-              </p>
-            </div>
-          </div>
+          <Step 
+            stepNumber={2}
+            title="Grab friends (or make new friends!) and form a team of 2-3"
+            imageSrc="/ui/step-team.png"
+            imageAlt="Step 2"
+            isReversed={true}
+          />
 
-          {/* Step 3 */}
-          <div className="flex gap-16 items-center w-full">
-            <div className="flex flex-col items-end text-right text-white flex-1">
-              <p 
-                className="text-4xl font-bold mb-2"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                step 3
-              </p>
-              <p 
-                className="text-6xl font-bold leading-tight"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                Learn from workshops, enjoy free food and merch!
-              </p>
-            </div>
-            <img 
-              src="/ui/step-workshops.png" 
-              alt="Step 3" 
-              className="w-[539px] h-[299px] rounded-lg shadow-[15px_15px_0px_0px_rgba(0,0,0,0.25)] object-cover"
-            />
-          </div>
+          <Step 
+            stepNumber={3}
+            title="Learn from workshops, enjoy free food and merch!"
+            imageSrc="/ui/step-workshops.png"
+            imageAlt="Step 3"
+          />
 
-          {/* Step 4 */}
-          <div className="flex gap-16 items-center w-full">
-            <img 
-              src="/ui/step-team.png" 
-              alt="Step 4" 
-              className="w-[509px] h-[307px] rounded-lg shadow-[-8px_16px_0px_0px_rgba(0,0,0,0.25)] object-cover"
-            />
-            <div className="flex flex-col items-start text-white flex-1">
-              <p 
-                className="text-4xl font-bold mb-2"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                step 4
-              </p>
-              <p 
-                className="text-6xl font-bold leading-tight"
-                style={{ 
-                  fontFamily: fonts.amaticBold,
-                  fontWeight: 'bold',
-                  textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                }}
-              >
-                Build your game & publish it online!
-              </p>
-            </div>
-          </div>
+          <Step 
+            stepNumber={4}
+            title="Build your game & publish it online!"
+            imageSrc="/ui/step-team.png"
+            imageAlt="Step 4"
+            isReversed={true}
+          />
         </div>
       </section>
 
-      {/* Map Section */}
       <section className="relative h-[900px] px-8">
-        {/* Clouds overlay behind map */}
         <div className="absolute top-0 left-0 w-full h-full -translate-y-96 from-transparent to-[#022994] bg-gradient-to-b">
           <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover" />
         </div>
 
-        <div className="relative w-full h-full z-50 -translate-y-32 bg-no-repeat bg-center bg-contain" style={{
-          backgroundImage: `url(/backgrounds/world-map.png)`,
-        }}>
+        <div className="relative w-full h-full z-50 -translate-y-32 bg-no-repeat bg-center bg-contain bg-[url(/backgrounds/world-map.png)]">
           
         </div>
       </section>
 
-      {/* Stories Section */}
-      <section className="relative py-24 bg-[#384fbc] -translate-y-100 bg-cover bg-center -z-10 pt-130 pb-60" style={{
-        background: `
-          url(/backgrounds/blue-gradient.png)
-        `
-      }}>
+      <section className="relative py-24 bg-[#384fbc] -translate-y-100 bg-cover bg-center -z-10 pt-130 pb-60 bg-[url(/backgrounds/blue-gradient.png)]">
         <div className="absolute bottom-0 left-0 w-full">
           <img
             src="/decorative/clouds-1.png"
@@ -435,95 +271,26 @@ function App() {
           </h2>
           
           <div className="flex gap-12 justify-between w-full">
-            <div className="bg-[#d9d9d9] rounded-2xl p-6 flex flex-col gap-2 w-[347px] h-[557px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-              <img 
-                src="/stories/ascpixi.png" 
-                alt="" 
-                className="w-[297px] h-[257px] object-cover mb-2"
-              />
-              <div className="p-2">
-                <p 
-                  className="text-black text-5xl font-bold mb-2"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Counterspell
-                </p>
-                <p 
-                  className="text-black text-3xl"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Game jam in 50 cities including Toronto, Boston, & Singapore
-                </p>
-              </div>
-            </div>
+            <StoryCard 
+              imageSrc="/stories/ascpixi.png"
+              imageAlt=""
+              title="Counterspell"
+              description="Game jam in 50 cities including Toronto, Boston, & Singapore"
+            />
 
-            <div className="bg-[#d9d9d9] rounded-2xl p-6 flex flex-col gap-2 w-[347px] h-[557px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-              <img 
-                src="/stories/manitej.png" 
-                alt="" 
-                className="w-[297px] h-[257px] object-cover mb-2"
-              />
-              <div className="p-2">
-                <p 
-                  className="text-black text-5xl font-bold mb-2"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Scrapyard
-                </p>
-                <p 
-                  className="text-black text-3xl"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  In-person hackathon in 70 cities worldwide
-                </p>
-              </div>
-            </div>
+            <StoryCard 
+              imageSrc="/stories/manitej.png"
+              imageAlt=""
+              title="Scrapyard"
+              description="In-person hackathon in 70 cities worldwide"
+            />
 
-            <div className="bg-[#d9d9d9] rounded-2xl p-6 flex flex-col gap-2 w-[347px] h-[557px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]">
-              <img 
-                src="/stories/sebastian.png" 
-                alt="" 
-                className="w-[297px] h-[257px] object-cover mb-2"
-              />
-              <div className="p-2">
-                <p 
-                  className="text-black text-5xl font-bold mb-2"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Daydream
-                </p>
-                <p 
-                  className="text-black text-3xl"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Game jam in 100 cities worldwide
-                </p>
-              </div>
-            </div>
+            <StoryCard 
+              imageSrc="/stories/sebastian.png"
+              imageAlt=""
+              title="Daydream"
+              description="Game jam in 100 cities worldwide"
+            />
           </div>
         </div>
       </section>
@@ -542,110 +309,29 @@ function App() {
           </h2>
           
           <div className="flex gap-5 w-full justify-between">
-            <div className="flex flex-col gap-10 items-center w-[400px]">
-              <a 
-                href="https://theavgeekbee.itch.io/office-click-clack"
-                className="block"
-              >
-                <img 
-                  src="/games/office-click-clack.png" 
-                  alt="Office Click Clack" 
-                  className="w-[389px] h-[263px] rounded-[20px] shadow-[12px_12px_0px_0px_rgba(0,0,0,0.25)] object-cover hover:scale-105 transition-transform"
-                />
-              </a>
-              <div className="text-center text-[#d7cfeb]">
-                <p 
-                  className="text-7xl font-bold mb-2"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Office Click Clack
-                </p>
-                <p 
-                  className="text-4xl font-bold"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  bunnyguy - Daydream dfw
-                </p>
-              </div>
-            </div>
+            <GameCard 
+              imageSrc="/games/office-click-clack.png"
+              imageAlt="Office Click Clack"
+              title="Office Click Clack"
+              author="bunnyguy - Daydream dfw"
+              href="https://theavgeekbee.itch.io/office-click-clack"
+            />
 
-            <div className="flex flex-col gap-9 items-center w-[400px]">
-              <a 
-                href="https://arandompsi.itch.io/zero-sum"
-                className="block"
-              >
-                <img 
-                  src="/games/zero-sum.png" 
-                  alt="Zero Sum" 
-                  className="w-[391px] h-[263px] rounded-[20px] shadow-[12px_12px_0px_0px_rgba(0,0,0,0.25)] object-cover hover:scale-105 transition-transform"
-                />
-              </a>
-              <div className="text-center text-[#d7cfeb]">
-                <p 
-                  className="text-7xl font-bold mb-2"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Zero Sum
-                </p>
-                <p 
-                  className="text-4xl font-bold"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  ARandomPsi - Daydream SV
-                </p>
-              </div>
-            </div>
+            <GameCard 
+              imageSrc="/games/zero-sum.png"
+              imageAlt="Zero Sum"
+              title="Zero Sum"
+              author="ARandomPsi - Daydream SV"
+              href="https://arandompsi.itch.io/zero-sum"
+            />
 
-            <div className="flex flex-col gap-9 items-center w-[400px]">
-              <a 
-                href="https://scoopish.itch.io/macuahuitl"
-                className="block"
-              >
-                <img 
-                  src="/games/macuahuitl.png" 
-                  alt="Macuahuitl" 
-                  className="w-[391px] h-[263px] rounded-[20px] shadow-[12px_12px_0px_0px_rgba(0,0,0,0.25)] object-cover hover:scale-105 transition-transform"
-                />
-              </a>
-              <div className="text-center text-[#d7cfeb]">
-                <p 
-                  className="text-7xl font-bold mb-2"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  Macuahuitl
-                </p>
-                <p 
-                  className="text-4xl font-bold"
-                  style={{ 
-                    fontFamily: fonts.amaticBold,
-                    fontWeight: 'bold',
-                    textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
-                  }}
-                >
-                  scoopish - Daydream Global
-                </p>
-              </div>
-            </div>
+            <GameCard 
+              imageSrc="/games/macuahuitl.png"
+              imageAlt="Macuahuitl"
+              title="Macuahuitl"
+              author="scoopish - Daydream Global"
+              href="https://scoopish.itch.io/macuahuitl"
+            />
           </div>
         </div>
 
@@ -756,7 +442,7 @@ function App() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
