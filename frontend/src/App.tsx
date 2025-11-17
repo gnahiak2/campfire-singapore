@@ -20,8 +20,6 @@ function App() {
     }
   };
 
-  document.body.addEventListener("click", console.log);
-
   return (
     <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
       <div className="absolute top-0 left-0 w-1/3 z-10 pointer-events-none">
@@ -240,17 +238,17 @@ function App() {
         </div>
       </section>
 
-      <section className="relative h-[900px] px-8 z-30">
-        <div className="absolute top-0 left-0 w-full h-full -translate-y-96 from-transparent to-[#022994] bg-gradient-to-b pointer-events-none">
+      <section className="relative h-[900px] px-8 z-30 -mt-96">
+        <div className="absolute top-0 left-0 w-full h-full from-transparent to-[#022994] bg-gradient-to-b pointer-events-none">
           <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover select-none" />
         </div>
 
-        <div id="map" className="relative w-full h-full z-50 -translate-y-32 bg-no-repeat bg-center bg-contain bg-[url(/backgrounds/world-map.png)]">
+        <div id="map" className="relative w-full h-full z-50 translate-y-64 bg-no-repeat bg-center bg-contain bg-[url(/backgrounds/world-map.png)]">
           
         </div>
       </section>
 
-      <section className="relative py-24 bg-[#384fbc] -translate-y-100 bg-cover bg-center z-20 pt-130 pb-60 bg-[url(/backgrounds/blue-gradient.png)]">
+      <section className="relative py-24 bg-[#384fbc] bg-cover bg-center z-20 pt-130 pb-60 bg-[url(/backgrounds/blue-gradient.png)]">
         <div className="absolute bottom-0 left-0 w-full pointer-events-none">
           <img
             src="/decorative/clouds-1.png"
@@ -311,7 +309,7 @@ function App() {
         </div>
       </section>
 
-      <section className="bg-[#384fbc] pb-[20vw] pt-[20vw] -translate-y-96 z-10">
+      <section className="bg-[#384fbc] pt-[20vw] z-10">
         <div className="flex flex-col gap-8 items-center px-8 max-w-7xl mx-auto">
           <h2 
             className="text-[#f1ebff] text-6xl font-bold text-center mb-8 font-amatic"
@@ -349,7 +347,7 @@ function App() {
           </div>
         </div>
 
-        <div className="absolute bottom-[-250px] scale-105 left-0 w-full pointer-events-none">
+        <div className="scale-105 left-0 w-full pointer-events-none">
           <img
             src="/decorative/puzzle-cloud-bottom.png"
             alt=""
@@ -358,11 +356,11 @@ function App() {
         </div>
       </section>
 
-      <section className="relative bg-[#384fbc] pb-32 pt-64 -translate-y-96">
+      <section className="relative pb-64">
         <div className="absolute w-full h-full -z-10 pointer-events-none">
           <img 
             src="/decorative/speech-bubble-bg.png" 
-            alt="" 
+            alt=""
             className="w-full h-full select-none pointer-events-none"
           />
         </div>
@@ -450,7 +448,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="relative -translate-y-96 -z-40">
+      <footer className="relative -z-40 -mt-80">
         <img
           src="/backgrounds/footer-background.png"
           alt=""
