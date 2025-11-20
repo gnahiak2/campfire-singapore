@@ -4,12 +4,19 @@ import Step from './components/Step.js';
 import StoryCard from './components/StoryCard.js';
 import GameCard from './components/GameCard.js';
 import NavbarLink from './components/NavbarLink.tsx';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
 function App() {
   const [email, setEmail] = useState("");
+  const [scrollY, setScrollY] = useState(document.body.scrollTop);
   const emailRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      setScrollY(window.scrollY);
+    });
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -47,7 +54,12 @@ function App() {
             <img src="/backgrounds/sky-shine.png" alt="" className="w-full h-full object-cover select-none" />
           </div>
 
-          <div className="absolute bottom-[32px] right-[140px] w-full h-full pointer-events-none">
+          <div
+            className="absolute bottom-[32px] right-[140px] w-full h-full pointer-events-none"
+            style={{
+              transform: `translateY(${-scrollY / 12}px)`
+            }}
+          >
             {/* fishy on the right. His name is frederick. */}
             <div className="absolute top-[64px] right-[140px] w-1/6">
               <img src="/characters/fish-2.png" alt="Fish named Frederick" className="w-full h-full object-cover select-none" />
@@ -60,11 +72,22 @@ function App() {
           </div>
 
           <div className="absolute bottom-0 lg:bottom-[160px] flex items-end lg:block left-0 w-full h-full lg:animate-cloud-float-right pointer-events-none">
-            <img src="/backgrounds/bottom-cloud.png" alt="" className="select-none" />
+            <img
+              src="/backgrounds/bottom-cloud.png"
+              alt=""
+              className="select-none"
+              style={{
+                transform: `translateY(${-scrollY / 5}px)`
+              }}
+            />
           </div>
  
           <div className="absolute -bottom-[50px] left-0 w-full h-[120px] pointer-events-none">
-            <img src="/decorative/vines.png" alt="" className="w-full h-full object-cover object-top select-none" />
+            <img
+              src="/decorative/vines.png"
+              alt=""
+              className="w-full h-full object-cover object-top select-none"
+            />
           </div>
 
           <div className="flex flex-col lg:flex-row justify-between items-center w-full gap-8 pb-24 z-10 h-full pt-16 lg:pt-0 lg:h-auto">
@@ -187,7 +210,14 @@ function App() {
         </section>
 
         <div className="absolute bottom-0 left-0 w-full pointer-events-none">
-          <img src="/backgrounds/landing-grass.png" alt="" className="w-full h-full object-cover select-none" />
+          <img
+            src="/backgrounds/landing-grass.png"
+            alt=""
+            className="w-full h-full object-cover select-none"
+            style={{
+              transform: `translateY(${scrollY / 10}px)`
+            }}
+          />
         </div>
       </div>
 
@@ -214,7 +244,10 @@ function App() {
         </div>
         
         <div className="absolute top-[0px] z-15 right-0 w-[352px] pointer-events-none">
-          <img src="/decorative/cogs-top-right.png" alt="" className="w-full h-full object-contain select-none" />
+          <img
+            src="/decorative/cogs-top-right.png" alt=""
+            className="w-full h-full object-contain select-none"
+          />
         </div>
 
         <div className="absolute top-[55%] z-15 left-0 w-[260px] pointer-events-none">
