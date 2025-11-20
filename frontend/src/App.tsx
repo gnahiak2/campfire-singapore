@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
-      <div className="absolute top-0 left-0 w-1/3 z-10 pointer-events-none hidden lg:block">
+      <div className="absolute top-0 left-0 w-1/3 z-40 pointer-events-none hidden lg:block">
         <img 
           src="/backgrounds/corner-cloud.png" 
           alt=""
@@ -223,15 +223,15 @@ function App() {
 
       <section className="relative pt-[13vw] pb-96 bg-[url(/backgrounds/underwater-gradient.png)] bg-cover">
         <div className="absolute top-0 left-0 w-screen h-[200px] bg-gradient-to-b from-[#004b2a] to-transparent pointer-events-none"></div>
-        <div className="absolute top-[30px] left-0 w-full scale-125 pointer-events-none z-20">
+        <div className="absolute top-[30px] left-0 w-full scale-125 pointer-events-none z-50">
           <img src="/decorative/vines.png" alt="" className="w-full h-full object-cover select-none" />
         </div>
 
-        <div className="absolute bottom-[500px] left-0 w-full h-[800px] -z-10 pointer-events-none">
+        <div className="absolute bottom-[500px] left-0 w-full h-[800px] z-0 pointer-events-none">
           <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover select-none" />
         </div>
         
-        <div className="absolute bottom-0 left-0 w-full h-[613px] -z-10 pointer-events-none">
+        <div className="absolute bottom-0 left-0 w-full h-[613px] z-0 pointer-events-none">
           <img src="/backgrounds/seafloor.png" alt="" className="w-full h-full object-cover select-none" />
         </div>
         
@@ -243,26 +243,26 @@ function App() {
           />
         </div>
         
-        <div className="absolute top-[0px] z-15 right-0 w-[352px] pointer-events-none">
+        <div className="absolute top-[0px] z-45 right-0 w-[352px] pointer-events-none">
           <img
             src="/decorative/cogs-top-right.png" alt=""
             className="w-full h-full object-contain select-none"
           />
         </div>
 
-        <div className="absolute top-[55%] z-15 left-0 w-[260px] pointer-events-none">
+        <div className="absolute top-[55%] z-45 left-0 w-[260px] pointer-events-none">
           <img src="/decorative/cogs-mid-left.png" alt="" className="w-full h-full object-contain select-none" />
         </div>
         
-        <div className="absolute top-[75%] z-15 right-0 translate-x-20 w-[280px] pointer-events-none">
+        <div className="absolute top-[75%] z-45 right-0 translate-x-20 w-[280px] pointer-events-none">
           <img src="/decorative/single-cog-1.png" alt="" className="w-full h-full object-contain select-none" />
         </div>
 
-        <div className="absolute top-[82%] z-15 left-0 translate-x-10 w-[280px] pointer-events-none">
+        <div className="absolute top-[82%] z-45 left-0 translate-x-10 w-[280px] pointer-events-none">
           <img src="/decorative/single-cog-2.png" alt="" className="w-full h-full object-contain select-none" />
         </div>
 
-        <div id="steps" className="relative z-10 flex flex-col gap-24 items-center px-12 max-w-7xl mx-auto">
+        <div id="steps" className="relative z-40 flex flex-col gap-24 items-center px-12 max-w-7xl mx-auto">
           <Step 
             stepNumber={1}
             imageSrc="/ui/step-signup.png"
@@ -445,7 +445,7 @@ function App() {
       </section>
 
       <section className="relative pb-64">
-        <div className="absolute w-full h-full -z-10 pointer-events-none">
+        <div className="absolute w-full h-full z-0 pointer-events-none">
           <img 
             src="/decorative/speech-bubble-bg.png" 
             alt=""
@@ -536,22 +536,32 @@ function App() {
         </div>
       </section>
 
-      <footer className="relative -z-40 -mt-80">
+      <footer className="relative z-0 -mt-80">
         <img
           src="/backgrounds/footer-background.png"
           alt=""
           className="w-full select-none"
         />
 
-        <div className="w-full h-[190px] bg-[#0f371d] -mt-3 flex items-center justify-center">
+        <div className="relative w-full h-[190px] bg-[#0f371d] -mt-3 flex flex-col items-center justify-center gap-6 z-10">
           <p 
-            className="text-white text-6xl text-center font-bold font-amatic"
+            className="text-white text-5xl text-center font-bold font-amatic"
             style={{ 
               textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
             }}
           >
             made with ♥ by Hack Club teens
           </p>
+
+          <div className="flex items-center gap-4 text-white text-3xl font-amatic font-bold z-20">
+            <a href="https://hackclub.com/" target="_blank" className="hover:underline">Hack Club</a>
+            <span>•</span>
+            <a href="https://hackclub.com/slack" target="_blank" className="hover:underline">Slack</a>
+            <span>•</span>
+            <a href="https://hackclub.com/clubs" target="_blank" className="hover:underline">Clubs</a>
+            <span>•</span>
+            <a href="https://hackclub.com/hackathons" target="_blank" className="hover:underline">Hackathons</a>
+          </div>
         </div>
       </footer>
     </div>
