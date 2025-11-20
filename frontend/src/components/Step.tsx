@@ -8,7 +8,7 @@ function Step({ stepNumber, imageSrc, imageAlt, isReversed = false, children }: 
 }>) {
   return (
     <div className={`flex gap-16 items-center w-full flex-col-reverse ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'}`}>
-      <div className={`relative flex flex-col text-[#4CB9F8] flex-1 ${isReversed ? 'lg:items-start' : 'lg:items-end lg:text-right'}`}>
+      <div className={`relative flex flex-col text-[#000] flex-1 ${isReversed ? 'lg:items-start' : 'lg:items-end lg:text-right'}`}>
         <div className="absolute -inset-12 lg:-inset-16 -z-60 pointer-events-none">
           <img 
             src="/ui/step-bg.png" 
