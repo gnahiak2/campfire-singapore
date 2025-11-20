@@ -34,7 +34,7 @@ function App() {
       <div className="w-full h-screen">
         <header className="relative h-[80px] lg:h-[115px] bg-[#45b4f5] flex justify-end items-center pr-16">
           <nav className="flex gap-4 text-3xl lg:gap-12 items-center text-white lg:text-5xl font-bold font-amatic">
-            <NavbarLink onClick={() => scrollToSection('steps')}>Steps</NavbarLink>
+            <NavbarLink onClick={() => scrollToSection('steps')}>How to organize</NavbarLink>
             {/* <NavbarLink onClick={() => scrollToSection('map')}>Map</NavbarLink> */}
             <NavbarLink onClick={() => scrollToSection('letter')}>Letter</NavbarLink>
             <NavbarLink onClick={() => scrollToSection('previous-events')}>Previous events</NavbarLink>
