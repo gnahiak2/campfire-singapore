@@ -1,4 +1,4 @@
-function StoryCard({ imageSrc, imageAlt, titleImageSrc, titleImageAlt, description, videoUrl, videoButtonText, videoButtonColor }: {
+function StoryCard({ imageSrc, imageAlt, titleImageSrc, titleImageAlt, description, videoUrl, videoButtonText, videoButtonColor, eventUrl }: {
   imageSrc: string;
   imageAlt: string;
   titleImageSrc: string;
@@ -7,6 +7,7 @@ function StoryCard({ imageSrc, imageAlt, titleImageSrc, titleImageAlt, descripti
   videoUrl: string;
   videoButtonText: string;
   videoButtonColor: string;
+  eventUrl: string;
 }) {
   return (
     <div className="bg-[url(ui/step-bg.png)] bg-no-repeat bg-cover md:bg-none md:bg-white relative p-6 pb-24 flex items-center flex-1 basis-0 flex-col gap-4 md:gap-2 md:shadow-[16px_16px_0px_0px_rgba(0,0,0,0.3)]">
@@ -17,14 +18,16 @@ function StoryCard({ imageSrc, imageAlt, titleImageSrc, titleImageAlt, descripti
       />
 
       <div className="p-2 flex flex-col">
-        <img 
-          src={titleImageSrc}
-          alt={titleImageAlt}
-          className="mb-2 h-full w-full"
-          style={{
-            filter: "drop-shadow(0px 4px 4px rgba(0,0,0,0.25))"
-          }}
-        />
+        <a className="transition-transform hover:scale-105 active:scale-95 cursor-pointer" href={eventUrl} target="_blank">
+          <img 
+            src={titleImageSrc}
+            alt={titleImageAlt}
+            className="mb-2 h-full w-full"
+            style={{
+              filter: "drop-shadow(0px 4px 4px rgba(0,0,0,0.25))"
+            }}
+          />
+        </a>
 
         <p 
           className="text-black h-max w-full text-2xl font-source-serif-pro"

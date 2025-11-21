@@ -391,6 +391,7 @@ function App() {
               videoButtonText='Watch the video'
               videoUrl="https://www.youtube.com/watch?v=H5RPsCMl3uM"
               videoButtonColor="#FF4186"
+              eventUrl="https://counterspell.hackclub.com/"
             />
 
             <StoryCard 
@@ -402,6 +403,7 @@ function App() {
               videoButtonText='Check out vid!'
               videoUrl="https://www.youtube.com/watch?v=8iM1W8kXrQA"
               videoButtonColor="#AF8D67"
+              eventUrl="https://scrapyard.hackclub.com/"
             />
 
             <StoryCard 
@@ -413,6 +415,7 @@ function App() {
               videoButtonText='Video here!'
               videoUrl="https://www.youtube.com/watch?v=vvdoW2gh9YU"
               videoButtonColor="#3F709A"
+              eventUrl="https://daydream.hackclub.com/"
             />
           </div>
         </div>
