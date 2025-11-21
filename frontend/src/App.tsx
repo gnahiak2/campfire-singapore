@@ -598,7 +598,7 @@ function App() {
           className="w-full h-[700px] object-bottom object-cover select-none"
         />
 
-        <div className="relative w-full px-4 pb-32 md:pb-0 md:px-0 md:h-[190px] bg-[#0f371d] -mt-3 flex flex-col items-center justify-center gap-16 md:gap-6 z-10">
+        <div className="relative w-full px-4 pb-32 md:pb-16 md:px-0 bg-[#0f371d] -mt-3 flex flex-col items-center justify-center gap-16 md:gap-6 z-10">
           <p 
             className="text-white text-4xl md:text-5xl text-center font-bold font-ember-and-fire"
             style={{ 
@@ -608,14 +608,22 @@ function App() {
             made with ♥ by Hack Club teens
           </p>
 
-          <div className="flex flex-col md:flex-row items-center gap-4 text-white text-4xl md:text-3xl font-ember-and-fire font-bold z-20">
-            <a href="https://hackclub.com/" target="_blank" className="hover:underline">Hack Club</a>
-            <span className='hidden md:inline-block'>•</span>
-            <a href="https://hackclub.com/slack" target="_blank" className="hover:underline">Slack</a>
-            <span className='hidden md:inline-block'>•</span>
-            <a href="https://hackclub.com/clubs" target="_blank" className="hover:underline">Clubs</a>
-            <span className='hidden md:inline-block'>•</span>
-            <a href="https://hackclub.com/hackathons" target="_blank" className="hover:underline">Hackathons</a>
+          <div className="mt-8 flex flex-col md:flex-row gap-16 max-w-5xl mx-auto px-4">
+            <div className="flex flex-col items-center md:items-end gap-4 text-white text-4xl md:text-3xl font-ember-and-fire font-bold z-20">
+              <a href="https://hackclub.com/" target="_blank" className="hover:underline">Hack Club</a>
+              <a href="https://hackclub.com/slack" target="_blank" className="hover:underline">Slack</a>
+              <a href="https://hackclub.com/clubs" target="_blank" className="hover:underline">Clubs</a>
+              <a href="https://hackclub.com/hackathons" target="_blank" className="hover:underline">Hackathons</a>
+            </div>
+            
+            <div className="flex-1 text-left">
+              <p className="text-white text-lg md:text-xl font-ember-and-fire leading-relaxed mb-4">
+                Hack Club is a 501(c)(3) nonprofit and network of 60k+ technical high schoolers. We believe you learn best by building so we're creating community and providing grants so you can make awesome projects. In the past few years, we've partnered with GitHub to run <a href="https://summer.hackclub.com/" target="_blank" className="underline hover:text-gray-300">Summer of Making</a>, hosted the <a href="https://github.com/hackclub/the-hacker-zephyr" target="_blank" className="underline hover:text-gray-300">world's longest hackathon on land</a>, and ran <a href="https://www.youtube.com/watch?v=QvCoISXfcE8" target="_blank" className="underline hover:text-gray-300">Canada's largest high school hackathon</a>.
+              </p>
+              <p className="text-white text-lg md:text-xl font-ember-and-fire font-bold">
+                At Hack Club, students aren't just learning, they're shipping.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
