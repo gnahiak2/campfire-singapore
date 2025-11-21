@@ -13,11 +13,14 @@ function FaqQuestion({ question, children }: FaqQuestionProps) {
   };
 
   return (
-    <div className="flex flex-col items-center w-full md:w-[467px] cursor-pointer" onClick={toggleExpanded}>
-      <div className={`
-        bg-[#8d3f34] shadow-[8px_8px_0px_0px_#733a32] flex flex-col items-center justify-center md:w-full px-12 py-8 md:py-16 transition-all duration-200 hover:scale-105
-        ${isExpanded ? "w-full" : `${question.length < 20 ? "w-max" : "w-full"}`}
-      `}>
+    <div className="flex flex-col items-center w-full md:w-[467px]">
+      <div
+        onClick={toggleExpanded}
+        className={`
+          bg-[#8d3f34] shadow-[8px_8px_0px_0px_#733a32] flex flex-col items-center justify-center md:w-full px-12 py-8 md:py-16 transition-all duration-200 hover:scale-105 cursor-pointer select-none
+          ${isExpanded ? "w-full" : `${question.length < 20 ? "w-max" : "w-full"}`}
+        `}
+      >
         <p 
           className="text-white text-4xl text-center font-bold leading-none w-full font-ember-and-fire"
         >
