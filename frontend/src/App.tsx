@@ -242,8 +242,8 @@ function App() {
           <img src="/decorative/vines.png" alt="" className="w-full h-full object-cover select-none" />
         </div>
 
-        <div className="absolute bottom-0 left-0 w-full h-[800px] z-0 pointer-events-none">
-          <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover select-none" />
+        <div className="absolute bottom-[30px] left-0 w-full h-[800px] z-0 pointer-events-none">
+          <img src="/decorative/clouds-3.png" alt="" className="w-full h-full object-cover select-none object-top" />
         </div>
         
         <div className="absolute bottom-0 left-0 w-full h-[613px] z-0 pointer-events-none">
@@ -330,7 +330,7 @@ function App() {
       </section>
 
       <section className="relative h-full md:h-[800px] pb-8 px-8 z-30 -mt-96">
-        <div className="absolute top-0 left-0 w-full h-[900px] from-transparent to-[#022994] bg-gradient-to-b pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-[900px] pointer-events-none">
           <img src="/decorative/clouds-3-symmetric.png" alt="" className="w-full h-full select-none" />
         </div>
 
@@ -363,7 +363,7 @@ function App() {
         </div>
       </section>
 
-      <section className="relative py-24 bg-[#384fbc] bg-cover bg-center z-20 pt-90 md:pt-130 pb-0 bg-[url(/backgrounds/blue-gradient.png)]">
+      <section className="relative py-24 bg-[#384fbc] bg-cover bg-center z-20 pt-90 md:pt-180 -mt-[25vw] pb-0 bg-[url(/backgrounds/blue-gradient.png)]">
         <div className="absolute bottom-48 md:bottom-0 left-0 w-full pointer-events-none scale-250 md:scale-100">
           <img
             src="/decorative/clouds-1.png"
@@ -388,7 +388,7 @@ function App() {
           />
         </div>
 
-        <div className="relative z-10 flex flex-col gap-12 items-center md:px-24 w-full md:w-auto md:max-w-7xl mx-auto -translate-y-56">
+        <div className="relative z-10 flex flex-col gap-12 items-center md:px-24 w-full md:w-auto md:max-w-7xl mx-auto">
           <h2
             id="previous-events"
             className="text-[#d7cfeb] text-6xl font-bold text-center mb-8 font-ember-and-fire"
@@ -598,7 +598,7 @@ function App() {
         <img
           src="/backgrounds/footer-background.png"
           alt=""
-          className="w-full h-[700px] object-bottom object-cover select-none"
+          className="w-full h-[50vw] object-bottom object-cover select-none scale-105"
         />
 
         <div className="relative w-full px-4 pb-32 md:pb-16 md:px-0 bg-[#0f371d] -mt-3 flex flex-col items-center justify-center gap-16 md:gap-6 z-10">
