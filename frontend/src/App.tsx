@@ -280,7 +280,7 @@ function App() {
             imageSrc="/ui/step-signup.jpeg"
             imageAlt="Step 1"
           >
-            Sign up for a <span className="font-bold text-[#F77034]">Campfire</span><br /> near you
+            Find a team of <span className="font-bold text-[#F77034]">co-organizers</span>
           </Step>
 
           <Step 
@@ -289,7 +289,7 @@ function App() {
             imageAlt="Step 2"
             isReversed={true}
           >
-            Grab <span className="font-bold text-[#F77034]">friends</span> (or make new friends!) and form a <span className="text-[#F77034] font-bold">team of 2-3</span>
+            Find a <span className="font-bold text-[#F77034]">venue</span> to host your hackathon
           </Step>
 
           <Step 
@@ -297,7 +297,7 @@ function App() {
             imageSrc="/ui/step-workshops.jpeg"
             imageAlt="Step 3"
           >
-            Learn from <span className="text-[#F77034] font-bold">workshops</span>, enjoy free food and merch!
+            Find <span className="text-[#F77034] font-bold">sponsors</span> to buy merch and prizes, and make your event special
           </Step>
 
           <Step 
@@ -306,8 +306,23 @@ function App() {
             imageAlt="Step 4"
             isReversed={true}
           >
-            <span className="text-[#F77034] font-bold">Build</span> your game & <span className="text-[#F77034] font-bold">publish</span> it online!
+            <span className="text-[#F77034] font-bold">Buy supplies</span>, order food, and prepare <span className="text-[#F77034] font-bold">workshops</span>
           </Step>
+          
+          <div className="flex justify-end mt-12">
+            <button 
+              className="bg-[#E77232] rounded-[20px] px-12 py-6 transform rotate-[2deg] hover:scale-105 transition-transform shadow-[0_8px_20px_rgba(0,0,0,0.25)] cursor-pointer active:scale-95"
+              type="button"
+              onClick={() => window.open("https://docs.google.com/document/d/14sMLsvxpBFtdzNOvmMJyjIrggKdaXLJ2GMiOoBcE8-M/", "_blank")}
+            >
+              <p 
+                className="text-4xl md:text-5xl font-normal font-dream-planner"
+                style={{ color: "rgba(255, 255, 255, 0.69)" }}
+              >
+                FULL ORGANIZERS GUIDE
+              </p>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -457,6 +472,18 @@ function App() {
               href="https://scoopish.itch.io/macuahuitl"
             />
           </div>
+          
+          <div className="flex justify-center mt-12">
+            <button 
+              className="bg-[#45B4F5] rounded-[20px] px-12 py-6 transform rotate-[-2deg] hover:scale-105 transition-transform shadow-[0_8px_20px_rgba(0,0,0,0.25)] cursor-pointer active:scale-95"
+              type="button"
+              onClick={() => window.open("https://itch.io/jam/daydream-global", "_blank")}
+            >
+              <p className="text-white text-4xl md:text-5xl font-normal font-dream-planner">
+                CHECK OUT TOP SUBMISSIONS!
+              </p>
+            </button>
+          </div>
         </div>
 
         <div className="scale-250 translate-y-64 pb-48 md:pb-0 md:translate-y-0 md:scale-105 left-0 w-full pointer-events-none">
@@ -564,11 +591,11 @@ function App() {
         </div>
       </section>
 
-      <footer className="relative z-0 -mt-80">
+      <footer className="relative flex flex-col z-0 -mt-80">
         <img
           src="/backgrounds/footer-background.png"
           alt=""
-          className="w-full select-none"
+          className="w-full h-[700px] object-bottom object-cover select-none"
         />
 
         <div className="relative w-full px-4 pb-32 md:pb-0 md:px-0 md:h-[190px] bg-[#0f371d] -mt-3 flex flex-col items-center justify-center gap-16 md:gap-6 z-10">
