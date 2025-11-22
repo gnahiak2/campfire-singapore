@@ -7,7 +7,7 @@ import NavbarLink from './components/NavbarLink.tsx';
 import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 
-const FORM_URL_ORGANIZER_APPLICATION = "https://forms.hackclub.com/campfiring";
+const FORM_URL_ORGANIZER_APPLICATION = "https://forms.hackclub.com/t/8L51MzWyrHus";
 const FORM_URL_RSVP = "https://forms.hackclub.com/t/a3QSt8MuvHus";
 
 function App() {
