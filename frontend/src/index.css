@@ -32,6 +32,8 @@ body {
 html, body, #root {
   height: 100%;
   width: 100%;
+  background-color: #45b4f4;
+  overscroll-behavior: none;
 }
 
 @theme {

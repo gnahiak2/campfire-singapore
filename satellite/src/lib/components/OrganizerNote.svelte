@@ -28,7 +28,7 @@
                 />
                 <div 
                     class="absolute inset-0 pointer-events-none"
-                    style="background-color: var(--primary); opacity: 0.3; -webkit-mask-image: url('/backgrounds/world-map-left.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('/backgrounds/world-map-left.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"
+                    style="background-color: var(--primary); opacity: 0.375; -webkit-mask-image: url('/backgrounds/world-map-left.png'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('/backgrounds/world-map-left.png'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"
                 ></div>
             </div>
             <div class="flex items-center md:block md:relative">
@@ -40,7 +40,7 @@
                     />
                     <div 
                         class="absolute inset-0 pointer-events-none"
-                        style="background-color: var(--primary); opacity: 0.3; -webkit-mask-image: url('/backgrounds/world-map-right.webp'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('/backgrounds/world-map-right.webp'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"
+                        style="background-color: var(--primary); opacity: 0.375; -webkit-mask-image: url('/backgrounds/world-map-right.webp'); -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; mask-image: url('/backgrounds/world-map-right.webp'); mask-size: contain; mask-repeat: no-repeat; mask-position: center;"
                     ></div>
                 </div>
                 <div

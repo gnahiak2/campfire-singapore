@@ -113,7 +113,7 @@ function App() {
                     />
                   </a>
                   <div className="w-[2px] h-8 bg-white opacity-60"></div>
-                  <a href='https://opensauce.com' className='transition-transform hover:scale-105 active:scale-95'>
+                  <a href='https://opensauce.com' className='transition-transform scale-125 hover:scale-130 active:scale-130'>
                     <img 
                       src="/branding/logo-opensauce.webp" 
                       alt="Open Sauce" 
