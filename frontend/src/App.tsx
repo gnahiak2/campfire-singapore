@@ -107,9 +107,12 @@ function App() {
                 <div className="flex items-center gap-3 mb-4">
                   <a href='https://hackclub.com' className='transition-transform hover:scale-105 active:scale-95'>
                     <img 
-                      src="/compressed/decorative/hack-club-flag.webp" 
+                      src="/decorative/flag-standalone-wtransparent.png" 
                       alt="Hack Club" 
                       className="w-[151px] h-[53px] object-cover transform rotate-[-4.8deg] select-none"
+                      style={{ 
+                        filter: "drop-shadow(3px 3px 0px rgba(0,0,0,0.25))"
+                      }}
                     />
                   </a>
                   <div className="w-[2px] h-8 bg-white opacity-60"></div>
@@ -119,7 +122,7 @@ function App() {
                       alt="Open Sauce" 
                       className="h-[70px] object-contain select-none pl-4"
                       style={{ 
-                        filter: "drop-shadow(3px 5px 0px rgba(0,0,0,0.25))"
+                        filter: "drop-shadow(3px 3px 0px rgba(0,0,0,0.25))"
                       }}
                     />
                   </a>
