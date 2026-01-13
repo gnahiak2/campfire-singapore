@@ -56,6 +56,11 @@ function App() {
   const emailRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    if (window.location.pathname === '/flagship') {
+      window.location.href = 'https://flagship.campfire.hackclub.com';
+      return;
+    }
+
     document.addEventListener("scroll", () => {
       setScrollY(window.scrollY);
     });
