@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "sync:once": "tsx -e \"import('./src/lib/airtable.js').then(m => m.airtableSyncWorker.syncEvents())\""
   },
   "dependencies": {
     "@astrojs/node": "^9.5.1",
@@ -28,6 +29,8 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/pg": "^8.16.0"
+    "@types/pg": "^8.16.0",
+    "airtable": "^0.12.2",
+    "tsx": "^4.21.0"
   }
 }

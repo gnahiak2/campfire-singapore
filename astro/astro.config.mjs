@@ -21,5 +21,12 @@ export default defineConfig({
     mode: 'standalone'
   }),
 
-  output: "server"
+  output: "server",
+
+  server: {
+    async start() {
+      const { airtableSyncWorker } = await import('./src/lib/airtable.ts');
+      await airtableSyncWorker.start();
+    }
+  }
 });
