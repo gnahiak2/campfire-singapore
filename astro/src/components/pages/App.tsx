@@ -258,10 +258,10 @@ function App() {
                 <div className='font-ember-and-fire text-white text-4xl pl-2 -translate-y-1 md:rotate-[-1.2deg]' style={{
                   textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                 }}>
-                  Join us for our <a
+                  Looking for our <a
                     className='underline inline-block cursor-pointer transition-transform hover:scale-105 active:scale-95'
                     href='https://flagship.hackclub.com?utm_source=campfire-website'
-                  >flagship</a> event in LA! <br />...or <span
+                  >flagship</a> event?<br />...or <span
                     className='underline inline-block cursor-pointer transition-transform hover:scale-105 active:scale-95'
                     onClick={() => openWithEmail(FORM_URL_ORGANIZER_APPLICATION)}
                   >
