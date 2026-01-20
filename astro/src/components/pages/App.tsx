@@ -158,15 +158,6 @@ function App() {
             />
           </div>
           
-          <FlagshipCTA 
-            className={clsx(
-              "hidden min-[860px]:flex justify-center w-full absolute left-0 right-0 z-40",
-              windowHeight < 950 ? "-top-8" : "top-4"
-            )} 
-            maxWidth 
-            compact={windowHeight < 830}
-          />
-
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start xl:items-center w-full gap-8 pb-16 z-30 h-full pt-16 md:pt-0 md:h-auto">
             <div className={clsx(
               "flex flex-col gap-4 w-full md:w-[648px]",
@@ -267,7 +258,10 @@ function App() {
                 <div className='font-ember-and-fire text-white text-4xl pl-2 -translate-y-1 md:rotate-[-1.2deg]' style={{
                   textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                 }}>
-                  ...or <span
+                  Join us for our <a
+                    className='underline inline-block cursor-pointer transition-transform hover:scale-105 active:scale-95'
+                    href='https://flagship.hackclub.com?utm_source=campfire-website'
+                  >flagship</a> event in LA! <br />...or <span
                     className='underline inline-block cursor-pointer transition-transform hover:scale-105 active:scale-95'
                     onClick={() => openWithEmail(FORM_URL_ORGANIZER_APPLICATION)}
                   >
@@ -344,7 +338,7 @@ function App() {
             imageSrc="/compressed/ui/step-signup.jpeg"
             imageAlt="Step 1"
           >
-            Find a team of <br></br><span className="font-bold text-[#F77034]">CO-ORGANIZERS</span>
+            Sign up for a <br></br><span className="font-bold text-[#F77034]">Campfire</span> near you
           </Step>
 
           <Step 
@@ -353,7 +347,7 @@ function App() {
             imageAlt="Step 2"
             isReversed={true}
           >
-            Find a <span className="font-bold text-[#F77034]">VENUE</span> to host your hackathon
+            Grab <span className="font-bold text-[#F77034]">friends</span> (or make new friends!) and <span className='font-bold'>form a <span className='text-[#F77034]'>team of 2-3</span></span>
           </Step>
 
           <Step 
@@ -361,7 +355,7 @@ function App() {
             imageSrc="/compressed/ui/step-workshops.webp"
             imageAlt="Step 3"
           >
-            Find <span className="text-[#F77034] font-bold">SPONSORS</span> to buy merch and prizes, and make your event <span className="text-[#F77034] font-bold">SPECIAL!</span>
+            Learn from <span className="text-[#F77034] font-bold">workshops</span>, enjoy <span className='font-bold'>free food and merch!</span>
           </Step>
 
           <Step 
@@ -370,7 +364,7 @@ function App() {
             imageAlt="Step 4"
             isReversed={true}
           >
-            Buy supplies, order food, learn <span className="text-[#F77034] font-bold"> GAME DEV</span>, and teach <span className="text-[#F77034] font-bold">WORKSHOPS</span>
+            <span className="text-[#F77034] font-bold">Build</span> your game & <span className="text-[#F77034] font-bold">publish</span> it on itch.io!
           </Step>
           
           <div className="flex justify-end mt-12">
@@ -383,7 +377,7 @@ function App() {
                 className="text-5xl md:text-6xl font-normal font-dream-planner"
                 style={{ color: "rgba(255, 255, 255, 0.69)" }}
               >
-                FULL ORGANIZERS GUIDE
+                READ MORE
               </p>
             </button>
           </div>
