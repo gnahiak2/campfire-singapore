@@ -45,53 +45,55 @@ function UnderConstruction({ event_name, record_id }: UnderConstructionProps) {
             <div className="relative z-10 flex flex-col items-center justify-center flex-1 px-6 py-16">
                 <div className="flex flex-col gap-8 items-center max-w-[648px] w-full">
                     {/* Logo section */}
-                    <div className="flex md:block flex-col items-center justify-center">
-                        <div className="flex items-center gap-3 mb-4 relative z-30">
-                            <a href='https://hackclub.com' className='transition-transform hover:scale-105 active:scale-95'>
-                                <img
-                                    src="/decorative/flag-standalone-wtransparent.png"
-                                    alt="Hack Club"
-                                    className="w-[151px] h-[53px] object-cover transform rotate-[-4.8deg] select-none"
-                                    style={{
-                                        filter: "drop-shadow(3px 3px 0px rgba(0,0,0,0.25))"
-                                    }}
-                                />
-                            </a>
-                            <div className="w-[2px] h-8 bg-white opacity-60"></div>
-                            <a href='https://opensauce.com' className='transition-transform scale-125 hover:scale-130 active:scale-130'>
-                                <img
-                                    src="/branding/logo-opensauce.webp"
-                                    alt="Open Sauce"
-                                    className="h-[70px] object-contain select-none pl-4"
-                                    style={{
-                                        filter: "drop-shadow(3px 3px 0px rgba(0,0,0,0.25))"
-                                    }}
-                                />
-                            </a>
-                        </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <div className='w-fit'>
+                            <div className="flex items-center gap-3 mb-4 relative z-30">
+                                <a href='https://hackclub.com' className='transition-transform hover:scale-105 active:scale-95'>
+                                    <img
+                                        src="/decorative/flag-standalone-wtransparent.png"
+                                        alt="Hack Club"
+                                        className="w-[151px] h-[53px] object-cover transform rotate-[-4.8deg] select-none"
+                                        style={{
+                                            filter: "drop-shadow(3px 3px 0px rgba(0,0,0,0.25))"
+                                        }}
+                                    />
+                                </a>
+                                <div className="w-[2px] h-8 bg-white opacity-60"></div>
+                                <a href='https://opensauce.com' className='transition-transform scale-125 hover:scale-130 active:scale-130'>
+                                    <img
+                                        src="/branding/logo-opensauce.webp"
+                                        alt="Open Sauce"
+                                        className="h-[70px] object-contain select-none pl-4"
+                                        style={{
+                                            filter: "drop-shadow(3px 3px 0px rgba(0,0,0,0.25))"
+                                        }}
+                                    />
+                                </a>
+                            </div>
 
-                        <div className="transform md:rotate-[-2.97deg] w-min">
-                            <h1
-                                className="text-[#fcf5ed] text-[80px] md:text-[100px] xl:text-[150px] font-normal leading-none -mb-4 font-dream-planner"
-                                style={{
-                                    textShadow: "5px 8px 0px rgba(0,0,0,0.25)"
-                                }}
-                            >
-                                CAMPFIRE
-                            </h1>
-                            <h3
-                                className="text-[#fcf5ed] text-[40px] md:text-[50px] xl:text-[60px] font-normal leading-none mb-4 font-dream-planner text-right"
-                                style={{
-                                    textShadow: "5px 8px 0px rgba(0,0,0,0.25)"
-                                }}
-                            >
-                                {event_name.toUpperCase()}
-                            </h3>
+                            <div className="transform md:rotate-[-2.97deg] w-min">
+                                <h1
+                                    className="text-[#fcf5ed] text-[80px] md:text-[100px] xl:text-[150px] font-normal leading-none -mb-4 font-dream-planner"
+                                    style={{
+                                        textShadow: "5px 8px 0px rgba(0,0,0,0.25)"
+                                    }}
+                                >
+                                    CAMPFIRE
+                                </h1>
+                                <h3
+                                    className="text-[#fcf5ed] text-[40px] md:text-[50px] xl:text-[60px] font-normal leading-none mb-4 font-dream-planner text-right"
+                                    style={{
+                                        textShadow: "5px 8px 0px rgba(0,0,0,0.25)"
+                                    }}
+                                >
+                                    {event_name.toUpperCase()}
+                                </h3>
+                            </div>
                         </div>
 
                         <div className="pl-2 md:pl-4">
                             <p
-                                className="text-white text-4xl md:text-3xl xl:text-4xl font-bold mb-2 font-ember-and-fire text-center"
+                                className="text-white text-3xl md:text-2xl xl:text-3xl font-bold mb-2 font-ember-and-fire text-center"
                                 style={{
                                     textShadow: "0px 4px 4px rgba(0,0,0,0.25)"
                                 }}
