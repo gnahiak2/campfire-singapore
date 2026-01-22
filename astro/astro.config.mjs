@@ -14,15 +14,7 @@ export default defineConfig({
   integrations: [react(), svelte()],
 
   vite: {
-    plugins: [tailwindcss()],
-    ssr: {
-      external: ['@prisma/client', /^\.\.?\/.*generated\/prisma/]
-    },
-    build: {
-      rollupOptions: {
-        external: [/@prisma\/client/]
-      }
-    }
+    plugins: [tailwindcss()]
   },
 
   adapter: node({
