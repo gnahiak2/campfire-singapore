@@ -35,6 +35,8 @@ function App({slug, content, record_id}: {slug: string | undefined, content: Sat
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1280);
   const [isMapOpen, setIsMapOpen] = useState(false);
   const emailRef = useRef<HTMLInputElement>(null);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
@@ -66,7 +68,7 @@ function App({slug, content, record_id}: {slug: string | undefined, content: Sat
   }
 
   return (
-    <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
+    <div className="w-full flex flex-col overflow-x-hidden">
       <div className="absolute -top-16 -left-8 w-1/3 z-20 pointer-events-none hidden min-[860px]:block">
         <img
           src="/compressed/backgrounds/corner-cloud.webp"
@@ -92,7 +94,10 @@ function App({slug, content, record_id}: {slug: string | undefined, content: Sat
           </nav>
         </header>
 
-        <section className="relative h-full flex items-end pb-32 2xl:pb-48 px-6 md:px-16 md:px-24 2xl:px-32 bg-[url(/backgrounds/blue-sky.webp)] bg-center bg-cover">
+        <section className={clsx(
+            "relative min-h-[750px] px-6 md:px-16 md:px-24 2xl:px-32 bg-[url(/backgrounds/blue-sky.webp)] bg-center bg-cover",
+            windowHeight > windowWidth && windowWidth < 860 ? "flex items-stretch pb-0" : "h-full flex items-end pb-32 2xl:pb-48"
+          )}>
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
             <img src="/backgrounds/sky-shine.webp" alt="" className="w-full h-full object-cover select-none" />
           </div>

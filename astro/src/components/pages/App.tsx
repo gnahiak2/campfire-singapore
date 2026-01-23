@@ -127,7 +127,7 @@ function App({ events }: { events: EventLocation[] }) {
         </header>
 
         <section className={clsx(
-            "relative px-6 md:px-16 md:px-24 2xl:px-32 bg-[url(/backgrounds/blue-sky.webp)] bg-center bg-cover",
+            "relative min-h-[700px] px-6 md:px-16 md:px-24 2xl:px-32 bg-[url(/backgrounds/blue-sky.webp)] bg-center bg-cover",
             windowHeight > windowWidth && windowWidth < 860 ? "flex items-stretch pb-0" : "h-full flex items-end pb-32 2xl:pb-48"
           )}>
           <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
