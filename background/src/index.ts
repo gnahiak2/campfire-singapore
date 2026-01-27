@@ -64,9 +64,9 @@ class AirtableSyncWorker {
                 }
 
                 await prisma.satellite.upsert({
-                    where: { slug },
+                    where: { recordId: record.id },
                     update: {
-                        recordId: record.id,
+                        slug,
                         data,
                         active: websiteActive,
                         updatedAt: new Date(),
@@ -84,8 +84,8 @@ class AirtableSyncWorker {
 
             const inactiveCount = await prisma.satellite.updateMany({
                 where: {
-                    slug: {
-                        notIn: records.map(r => r.get('slug') as string).filter(Boolean),
+                    recordId: {
+                        notIn: records.map(r => r.id),
                     },
                     active: true,
                 },
