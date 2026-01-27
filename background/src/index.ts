@@ -50,64 +50,89 @@ class AirtableSyncWorker {
                 console.log(`Deleted ${deleteResult.count} records no longer in Airtable`);
             }
 
-            for (const record of records) {
-                const slug = record.get('slug') as string;
-                const websiteJson = record.get('website_json') as string;
-                const websiteActive = record.get('website_active') === true;
-                
-                if (!slug) {
-                    console.warn(`Skipping record ${record.id}: missing slug`);
-                    continue;
-                }
+            // Parse all records first
+            const parsedRecords = records
+                .map(record => {
+                    const slug = record.get('slug') as string;
+                    const websiteJson = record.get('website_json') as string;
+                    const websiteActive = record.get('website_active') === true;
 
-                let data: any;
-                try {
-                    data = websiteJson ? JSON.parse(websiteJson) : {};
-                    if (websiteActive && data.version !== VERSION) {
-                        data = {
-                            error: "Your JSON is outdated. Please update it!"
+                    if (!slug) {
+                        console.warn(`Skipping record ${record.id}: missing slug`);
+                        return null;
+                    }
+
+                    let data: any;
+                    try {
+                        data = websiteJson ? JSON.parse(websiteJson) : {};
+                        if (websiteActive && data.version !== VERSION) {
+                            data = { error: "Your JSON is outdated. Please update it!" };
                         }
+                    } catch {
+                        console.error(`Error parsing JSON for slug ${slug}`);
+                        data = { error: "Error parsing JSON. Make sure the JSON is valid!" };
                     }
-                } catch (error) {
-                    console.error(`Error parsing JSON for slug ${slug}:`, error);
-                    data = {
-                        error: "Error parsing JSON. Make sure the JSON is valid!"
-                    };
-                }
 
-                try {
-                    await prisma.satellite.upsert({
-                        where: { recordId: record.id },
-                        update: {
-                            slug,
-                            data,
-                            active: websiteActive,
-                            updatedAt: new Date(),
-                        },
-                        create: {
-                            recordId: record.id,
-                            slug,
-                            data,
-                            active: websiteActive,
-                        },
-                    });
-                    console.log(`✓ Synced: ${slug} - Active: ${websiteActive}`);
-                } catch (upsertError: any) {
-                    if (upsertError?.code === 'P2002') {
-                        const field = upsertError.meta?.target?.[0] || 'unknown';
-                        const existing = await prisma.satellite.findFirst({
-                            where: field === 'slug' ? { slug } : { recordId: record.id },
-                        });
-                        console.error(
-                            `Unique constraint violation on "${field}" for record ${record.id} (slug: ${slug}).`,
-                            existing
-                                ? `Conflicting record: id=${existing.id}, recordId=${existing.recordId}, slug=${existing.slug}`
-                                : 'Could not find conflicting record.'
-                        );
-                    } else {
-                        console.error(`Failed to upsert record ${record.id} (slug: ${slug}):`, upsertError);
-                    }
+                    return { recordId: record.id, slug, data, active: websiteActive };
+                })
+                .filter((r): r is NonNullable<typeof r> => r !== null);
+
+            // Check for duplicate slugs in Airtable data and skip them
+            const slugCounts = new Map<string, string[]>();
+            for (const r of parsedRecords) {
+                const existing = slugCounts.get(r.slug) || [];
+                existing.push(r.recordId);
+                slugCounts.set(r.slug, existing);
+            }
+            const duplicateSlugs = new Set<string>();
+            for (const [slug, recordIds] of slugCounts) {
+                if (recordIds.length > 1) {
+                    console.error(`Duplicate slug "${slug}" found in Airtable for records: ${recordIds.join(', ')} - skipping all`);
+                    duplicateSlugs.add(slug);
                 }
+            }
+            const deduplicatedRecords = parsedRecords.filter(r => !duplicateSlugs.has(r.slug));
+
+            // Fetch existing records by recordId
+            const existingRecords = await prisma.satellite.findMany({
+                where: { recordId: { in: deduplicatedRecords.map(r => r.recordId) } },
+            });
+            const existingByRecordId = new Map(existingRecords.map(r => [r.recordId, r]));
+
+            const toCreate: typeof deduplicatedRecords = [];
+            const toUpdate: { id: number; data: typeof deduplicatedRecords[0] }[] = [];
+
+            for (const record of deduplicatedRecords) {
+                const existing = existingByRecordId.get(record.recordId);
+                if (existing) {
+                    toUpdate.push({ id: existing.id, data: record });
+                } else {
+                    toCreate.push(record);
+                }
+            }
+
+            // Batch create
+            if (toCreate.length > 0) {
+                await prisma.satellite.createMany({ data: toCreate });
+                console.log(`✓ Created ${toCreate.length} new records`);
+            }
+
+            // Batch update (Prisma doesn't support batch update, so we do it in parallel)
+            if (toUpdate.length > 0) {
+                await Promise.all(
+                    toUpdate.map(({ id, data }) =>
+                        prisma.satellite.update({
+                            where: { id },
+                            data: {
+                                slug: data.slug,
+                                data: data.data,
+                                active: data.active,
+                                updatedAt: new Date(),
+                            },
+                        })
+                    )
+                );
+                console.log(`✓ Updated ${toUpdate.length} existing records`);
             }
 
             console.log(`[${new Date().toISOString()}] Sync completed successfully`);
