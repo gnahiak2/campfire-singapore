@@ -27,13 +27,14 @@ export interface EventLocationWithDistance extends EventLocation {
 export async function fetchEventsLoc() {
     return (await airtableBase('events').select({
         view: 'Everything',
-        // filterByFormula: '{website_active} = 1', 
+        filterByFormula: '{Status} = "Active"',
         fields: [
             'slug', //string
             'event_name', //string
             'lat', //number
             'long', //number
-            'website_active' //boolean
+            'website_active', //boolean
+			'Status' // Canceled | Active
         ]
     }).all()) as AirtableRecord[]
 }
