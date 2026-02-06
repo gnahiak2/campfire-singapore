@@ -259,6 +259,7 @@ export type SatelliteContent = {
                     answer: string;
                 }[];
                 buttonText: string;
+                buttonLink?: string;
             };
             organizer?: {
                 title: string;
@@ -267,6 +268,7 @@ export type SatelliteContent = {
                     answer: string;
                 }[];
                 buttonText: string;
+                buttonLink?: string;
             };
         };
     };

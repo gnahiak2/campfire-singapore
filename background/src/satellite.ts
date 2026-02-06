@@ -90,6 +90,7 @@ export const SatelliteContentSchema = z.object({
                     answer: z.string(),
                 })),
                 buttonText: z.string(),
+                buttonLink: z.string().optional()
             }),
             organizer: z.object({
                 title: z.string(),
@@ -98,6 +99,7 @@ export const SatelliteContentSchema = z.object({
                     answer: z.string(),
                 })),
                 buttonText: z.string(),
+                buttonLink: z.string().optional()
             }).optional(),
         }),
     }),

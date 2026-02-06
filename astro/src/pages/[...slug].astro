@@ -7,9 +7,13 @@ import UnderConstruction from "../components/pages/UnderConstruction";
 import type { SatelliteContent } from "../lib/satellite";
 
 export const prerender = false;
-const { slug } = Astro.params;
+let { slug } = Astro.params;
 
 const slugs = await getSatelliteSlugs();
+
+if (slug === 'notmyevent') {
+  slug = 'myevent';
+}
 
 if (!slug || !slugs.includes(slug)) {
   return Astro.redirect("/404");
