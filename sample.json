@@ -80,7 +80,6 @@
             { "time": "6:00-7:00 PM", "activity": "Project Pitch and Dinner" },
             { "time": "7:00-7:30 PM", "activity": "Karaoke" },
             { "time": "7:45-9:30 PM", "activity": "Secret Activity(if parents are concerned please feel free to reach out @ singapore@campfire.hackclub.com" }
-            
           ]
         },
         {
@@ -97,7 +96,6 @@
             { "time": "7:30-7:45 PM", "activity": "Clean-up" },
             { "time": "7:45-8 PM", "activity": "Award ceremony/prize handouts" },
             { "time": "8 PM", "activity": "EVERYBODY OUT" }
-            
           ]
         }
       ]
@@ -138,9 +136,7 @@
             "answer": "Just bring yourself, a laptop, charger, and any personal items you need. We'll provide food, drinks, and everything else!"
           }
         ],
-        "buttonText": {
-          "name": "check out the parent guide @ https://docs.google.com/document/d/1rug_L5dWRar7d7oidjpZjGvFSMUD_QsP14gtv2BcxZc/edit?usp=sharing"
-        }
+        "buttonText": "check out the parent guide @ https://docs.google.com/document/d/1rug_L5dWRar7d7oidjpZjGvFSMUD_QsP14gtv2BcxZc/edit?usp=sharing"
       },
       "organizer": {
         "title": "Organizer",
